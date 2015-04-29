@@ -11,7 +11,8 @@ from alipaytool.handler import MobilePayHandler
 HTTPS_VERIFY_URL = 'https://mapi.alipay.com/gateway.do?service=notify_verify&'
 # your alipay partner
 ALI_PARTNER = 'XXX'
-# you alipay public key just like '-----BEGIN PUBLIC KEY-----\nXXXX\n-----END PUBLIC KEY-----'
+# you alipay public key just like
+# '-----BEGIN PUBLIC KEY-----\nXXXX\n-----END PUBLIC KEY-----'
 ALI_PUBLIC_KEY = 'XXX'
 
 
@@ -28,7 +29,9 @@ class TestAlipayNotifyHandler(MobilePayHandler):
 
 application = tornado.web.Application(
     [(r'^/notify$', TestAlipayNotifyHandler)],
-    **{'HTTPS_VERIFY_URL': HTTPS_VERIFY_URL, 'ALI_PARTNER': ALI_PARTNER, 'ALI_PUBLIC_KEY': ALI_PUBLIC_KEY}
+    **{'HTTPS_VERIFY_URL': HTTPS_VERIFY_URL,
+        'ALI_PARTNER': ALI_PARTNER,
+        'ALI_PUBLIC_KEY': ALI_PUBLIC_KEY}
 )
 
 
